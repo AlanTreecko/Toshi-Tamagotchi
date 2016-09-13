@@ -1,4 +1,4 @@
-10 HOME
+10 HOME : NORMAL
 20 INPUT "Name? ";NM$
 30 HOME
 40 LOVE = 0 : WORKED = 0 : ENERGY = 100
@@ -7,33 +7,34 @@
 70 HOME 
 80 PRINT "----------------------------------------"
 90 PRINT " Hello, ";NM$
-100 PRINT " LOVE POINTS: ";LOVE
-110 PRINT " MOOLAH     : ";MOOLAH
-120 PRINT " LUST POINTS: ";LUST
-130 PRINT " BELLY      : ";BELLY
-140 PRINT " ENERGY     : ";ENERGY
-150 PRINT " COOKIES    : ";BREADAM
+100 PRINT " LOVE POINTS: ";LOVE :
+110 PRINT " MOOLAH     : ";MOOLAH : 
+120 PRINT " LUST POINTS: ";LUST : 
+130 PRINT " BELLY      : ";BELLY :  
+140 PRINT " ENERGY     : ";ENERGY :
+150 PRINT " COOKIES    : ";BREADAM :
 170 PRINT " --------------------------------------"
 180 PRINT " |1 COOKIE|2 TREAT|3 HUG|4 WORK|5 SAVE|"
-190 PRINT " --------------------------------------  "
+190 PRINT " --------------------------------------                           |"
 160 PRINT "                                      "
-200 PRINT "  #       #
-210 PRINT " # ####### #
-220 PRINT " #         #
-230 PRINT " #  #   #  #
-240 PRINT " #         #
-250 PRINT " #  #####  #
-260 PRINT " #         #
-270 PRINT "  #########
-280 PRINT "  #       #
-300 REM END OF MENU
+200 PRINT "   #       #              | 6 REFILL
+210 PRINT "  # ####### #             |   COOKIES
+220 PRINT "  #         #             | 
+230 PRINT "  #  #   #  #             | 7 STORE
+240 PRINT "  #         #             | 
+250 PRINT "  #  #####  #             | 8 SLEEP
+260 PRINT "  #         #             |
+270 PRINT "   #########              | 9 CREDITS
+280 PRINT "   #       #              |
+290 
 310 GET K$
 320 IF K$ = "" THEN 70
 330 IF K$ = "1" AND BREADAM > 0 AND BELLY < 100 THEN LOVE = LOVE+1 : BREADAM = BREADAM-1 : BELLY = BELLY+1 : GOTO 70
-340 IF K$ = "1" AND BREADAM == 0 AND BELLY > 100THEN GOTO 70
+340 IF K$ = "1" AND BREADAM == 0 AND BELLY > 100 THEN GOTO 70
 350 IF K$ = "2" AND MOOLAH > 9 AND BELLY < 98 THEN LOVE = LOVE+5 : MOOLAH = MOOLAH-10 : BELLY = BELLY+3 : GOTO 70
 360 IF K$ = "2" AND MOOLAH < 9 THEN GOTO 70
 370 IF K$ = "3" THEN LOVE = LOVE +2 : LUST = LUST+1 : GOTO 70
-380 
-390 IF K$ = "4" AND MOOLAH > 1000 AND ENERGY > 50 THEN MOOLAH = MOOLAH+30 : ENERGY = ENERGY-30 : BELLY = BELLY-3 : GOTO 70
-370 IF K$ = "6" AND COOKIES == 0 THEN COOKIES = 50
+380 IF K$ = "4" AND BELLY < 3 AND ENERGY < 50 GOTO 70
+390 IF K$ = "4" AND BELLY > 3 AND ENERGY > 50 THEN MOOLAH = MOOLAH+30 : ENERGY = ENERGY-30 : BELLY = BELLY-3 : GOTO 70
+400 IF K$ = "5" AND COOKIES == 0 THEN COOKIES = 50 : GOTO 70
+410 IF K$ = "5" AND COOKIES > 0 THEN GOTO 70
