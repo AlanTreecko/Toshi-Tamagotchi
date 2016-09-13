@@ -1,0 +1,31 @@
+10 HOME
+20 INPUT "Name? ";NM$
+30 HOME
+40 LOVE = 0
+50 MOOLAH = 500
+60 LUST = 0 
+70 HOME 
+80 PRINT "----------------------------------------"
+90 PRINT " Hello, ";NM$
+100 PRINT " LOVE POINTS: ";LOVE
+110 PRINT " MOOLAH     : ";MOOLAH
+120 PRINT " LUST POINTS: ";LUST
+130 PRINT " "
+140 PRINT "----------------------------------------"
+150 PRINT "1 FOR COOKIE | 2 FOR TREAT | 3 FOR HUG!|
+160 PRINT "----------------------------------------"
+170 PRINT " #       #
+180 PRINT "# ####### #
+190 PRINT "#         #
+200 PRINT "#  #   #  #
+210 PRINT "#         #
+220 PRINT "#  #####  #
+230 PRINT "#         #
+240 PRINT " #########
+250 PRINT " #       #
+260 PRINT " #       #
+270 REM
+280 IF K$ = "" THEN 270
+290 IF K$ = "1" THEN LOVE + 2 GOTO 70
+300 IF K$< > "2" THEN LOVE + 4 MOOLAH - 30 GOTO 70
+310 IF K$< > "3"
