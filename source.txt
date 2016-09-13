@@ -13,24 +13,26 @@
 130 PRINT " BELLY      : ";BELLY
 140 PRINT " ENERGY     : ";ENERGY
 150 PRINT " COOKIES    : ";BREADAM
-160 PRINT " "
-170 PRINT " |1 COOKIE|2 TREAT|3 HUG|4 WORK|5 SAVE"
-180 PRINT "----------------------------------------"
-190 PRINT "  #       #
-200 PRINT " # ####### #
-210 PRINT " #         #
-220 PRINT " #  #   #  #
-230 PRINT " #         #
-240 PRINT " #  #####  #
-250 PRINT " #         #
-260 PRINT "  #########
-270 PRINT "  #       #
-280 PRINT
-290 REM END OF MENU
-300 GET K$
-310 IF K$ = "" THEN 70
-320 IF K$ = "1" AND BREADAM > 0 THEN LOVE = LOVE+1 : BREADAM = BREADAM-1 : GOTO 70
-330 IF K$ = "2" AND MOOLAH > 9 THEN LOVE = LOVE+5 : MOOLAH = MOOLAH-10 : GOTO 70
-340 IF K$ = "3" THEN LOVE = LOVE +2 : LUST = LUST+1 : GOTO 70
-350 REM IF K$ = "7" THEN PRINT "INTENSE DABORONI" : END
-360 IF K$ = "4" THEN MOOLAH = MOOLAH+30 : ENERGY = ENERGY-1 : GOTO 70
+160 PRINT ""
+170 PRINT "----------------------------------------"
+180 PRINT " |1 COOKIE|2 TREAT|3 HUG|4 WORK|5 SAVE| "
+190 PRINT "----------------------------------------"
+200 PRINT "  #       #
+210 PRINT " # ####### #
+220 PRINT " #         #
+230 PRINT " #  #   #  #
+240 PRINT " #         #
+250 PRINT " #  #####  #
+260 PRINT " #         #
+270 PRINT "  #########
+280 PRINT "  #       #
+290 
+300 REM END OF MENU
+310 GET K$
+320 IF K$ = "" THEN 70
+330 IF K$ = "1" AND BREADAM > 0 THEN LOVE = LOVE+1 : BREADAM = BREADAM-1 : GOTO 70
+340 IF K$ = "2" AND MOOLAH > 9 THEN LOVE = LOVE+5 : MOOLAH = MOOLAH-10 : GOTO 70
+350 IF K$ = "3" THEN LOVE = LOVE +2 : LUST = LUST+1 : GOTO 70
+360 REM IF K$ = "7" THEN PRINT "INTENSE DABORONI" : END
+370 IF K$ = "4" THEN MOOLAH = MOOLAH+30 : ENERGY = ENERGY-1 : GOTO 70
+
