@@ -1,0 +1,85 @@
+10 HOME : NORMAL
+20 INPUT "Name? ";NM$
+30 HOME
+40 LOVE = 0 : ENERGY = 100 : YRNBAL = 0 : COMPUT = 0
+50 MOOLAH = 500 : HUG = 0 : BREADAM = 50 : LORDSB = 0 : DEBUG = 1
+60 LUST = 0 : BELLY = 0 : CONFIRM = 0 : SRVTRT = 0 : NM$ = "Alan"
+70 HOME 
+80 PRINT " -------------------------------------- "
+90 PRINT " Hello, ";NM$
+100 PRINT " LOVE POINTS: ";LOVE :
+110 PRINT " MOOLAH     : ";MOOLAH : 
+120 PRINT " LUST POINTS: ";LUST : 
+130 PRINT " BELLY      : ";BELLY :  
+140 PRINT " ENERGY     : ";ENERGY :
+150 PRINT " COOKIES    : ";BREADAM :
+170 PRINT " --------------------------------------"
+180 PRINT " |1 COOKIE|2 TREAT|3 HUG|4 WORK|5 SAVE|"
+190 PRINT " --------------------------------------                           |"
+160 PRINT "                                      "
+200 PRINT "   #       #              | 6 STORE
+210 PRINT "  # ####### #             |
+220 PRINT "  #         #             | 7 ITEMS
+230 PRINT "  #  #   #  #             | 
+240 PRINT "  #         #             | 8 CREDITS
+250 PRINT "  #  #####  #             | 
+260 PRINT "  #         #             | VER 0.53
+270 PRINT "   #########              | * BETA *
+280 PRINT "   #       #              |
+290 
+310 GET K$
+320 IF K$ = "" THEN 70
+330 IF K$ = "1" AND BREADAM > 0 AND BELLY < 100 THEN LOVE = LOVE+1 : BREADAM = BREADAM-1 : BELLY = BELLY+1 : GOTO 070
+340 IF K$ = "1" AND BREADAM == 0 AND BELLY > 100 THEN GOTO 70
+350 IF K$ = "2" AND MOOLAH > 9 AND BELLY < 98 THEN LOVE = LOVE+5 : MOOLAH = MOOLAH-10 : BELLY = BELLY+3 : GOTO 070
+360 IF K$ = "2" AND MOOLAH < 9 THEN GOTO 70
+370 IF K$ = "3" THEN LOVE = LOVE +2 : LUST = LUST+1 : GOTO 70
+380 IF K$ = "6" THEN GOTO 500
+390 IF K$ = "4" AND BELLY > 3 AND ENERGY > 10 THEN MOOLAH = MOOLAH+50 : ENERGY = ENERGY-10 : LOVE = LOVE-31 : GOTO 070
+400 IF K$ = "5" AND COOKIES == 0 THEN COOKIES = 50 : GOTO 70
+410 IF K$ = "5" AND COOKIES > 0 THEN GOTO 70
+420 IF K$ = "4" AND BELLY < 3 AND ENERGY < 50 THEN GOTO 70
+430 IF K$ = "7" THEN GOTO 1000
+
+500 HOME
+510 PRINT " -------------------------------------- "
+520 PRINT "  !Welcome to COUCHES AND STUFF Store!  "
+530 PRINT " -------------------------------------- "
+540 PRINT " ITEM            ITEM NO.        MOOLAH "
+550 IF SRVTRT == 0 THEN PRINT " SARVS TREATS    001                 20 " 
+560 IF SRVTRT == 1 THEN PRINT " REGULAR TREATS  01A                 10 "
+570 IF LORDSB == 0 THEN PRINT " LORS BED        002                400 "
+580 IF LORDSB == 1 THEN PRINT " LORS BED        ???           SOLD OUT "
+590 IF YRNBAL == 0 THEN PRINT " MRANS YARN BALL 003                 80 "
+600 IF YRNBAL == 1 THEN PRINT " MRANS YARN BALL ???           SOLD OUT "
+610 IF COMPUT == 0 THEN PRINT " COMPUTER AX229  004              1,000 "
+620 IF COMPUT == 1 THEN PRINT " COMPUTER AX229  ???           SOLD OUT "
+630 IF COUCH0 == 0 THEN PRINT " DARSIN COUCH    005                500 "
+640 IF COUCH0 == 1 THEN PRINT " DARSIN COUCH    ???           SOLD OUT "
+650 PRINT "   PRESS 0 TO EXIT COUCHES AND STUFF!
+660 GET K$
+670 IF K$ = "" THEN GOTO 500
+680 IF K$ = "1" AND SRVTRT == 0 THEN SRVTRT = 1
+690 IF K$ = "1" AND SRVTRT == 1 THEN SRVTRT = 0 
+700 IF K$ = "2" AND LORDSB == 0 AND MOOLAH > 400 THEN MOOLAH = MOOLAH-400 : LORDSB = 1 : LOVE = LOVE+50 : LUST = LUST+20 : GOTO 500
+710 IF K$ = "2" AND LORDSB == 1 THEN GOTO 500
+720 IF K$ = "3" AND YRNBAL == 0 AND MOOLAH > 80 THEN MOOLAH = MOOLAH-80 : YRNBALL = 1 : LOVE = LOVE+20 : GOTO 500
+730 IF K$ = "3" AND YRNBAL == 1 THEN GOTO 500
+740 IF K$ = "4" AND COMPUT == 0 AND MOOLAH > 1000 THEN MOOLAH = MOOLAH-1000 : COMPUT = 1 : LOVE = LOVE+100 : GOTO 500
+750 IF K$ = "4" AND COMPUT == 1 THEN GOTO 500
+760 IF K$ = "5" AND COUCH0 == 0 AND MOOLAH > 500 THEN MOOLAH = MOOLAH-500 : COUCH0 = 1 : LOVE = LOVE=30 : GOTO 500
+770 IF K$ = "5" AND COUCH0 == 1 THEN GOTO 500
+780 IF K$ = "0" THEN GOTO 70
+
+1000 HOME : PRINT " -------------------------------------- "
+1010 PRINT "            Toshi's items               "
+1020 PRINT " -------------------------------------- "
+1030 IF LORDSB == 1 THEN PRINT " 1 LORS BED"
+1040 IF YRNBAL == 1 THEN PRINT " 2 MRANS YARN BALL"
+1050 IF COMPUT == 1 THEN PRINT " 3 COMPUTER AX229"
+1060 IF COUCH0 == 1 THEN PRINT " 4 DARSIN COUCH"
+1080 PRINT " PRESS 0 TO LEAVE" 
+1090 GET K$
+1100 IF K$ = "" THEN GOTO 1000
+1110 IF K$ = "0" THEN GOTO 70
+1120 IF K$ = "9" THEN GOTO 1400
