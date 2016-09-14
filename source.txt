@@ -91,7 +91,11 @@
 1430 INPUT "How much belly?";BELLY
 1440 INPUT "How much energy?";ENERGY
 1450 INPUT "How much cookies?";BREADAM
-1460 PRINT "Configuration saved. Press 1 to continue."
-1470 GET K$
-1480 IF K$ = "" THEN 1470
-1490 IF K$ = "1" THEN 70
+1460 INPUT "Get LORS BED? 1/0 ";LORDSB
+1470 INPUT "Get MRANS BALL? 1/0 ";YRNBALL
+1480 INPUT "Get COMPUTER? 1/0 ";COMPUT
+1490 INPUT "Get COUCH? 1/0 ";COUCH0
+1500 PRINT "Configuration saved. Press 1 to continue."
+1510 GET K$
+1520 IF K$ = "" THEN 1470
+1530 IF K$ = "1" THEN 70
