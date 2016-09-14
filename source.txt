@@ -2,7 +2,7 @@
 20 INPUT "Name? ";NM$
 30 HOME
 40 LOVE = 0 : WORKED = 0 : ENERGY = 100 : YRNBAL = 0 : COMPUT = 0
-50 MOOLAH = 500 : HUG = 0 : BREADAM = 50 : LORDSB = 0
+50 MOOLAH = 500 : HUG = 0 : BREADAM = 50 : LORDSB = 0 : DEBUG = 1
 60 LUST = 0 : BELLY = 0 : CONFIRM = 0 : SRVTRT = 0
 70 HOME 
 80 PRINT " -------------------------------------- "
@@ -17,14 +17,14 @@
 180 PRINT " |1 COOKIE|2 TREAT|3 HUG|4 WORK|5 SAVE|"
 190 PRINT " --------------------------------------                           |"
 160 PRINT "                                      "
-200 PRINT "   #       #              | 6 REFILL
-210 PRINT "  # ####### #             |   COOKIES
-220 PRINT "  #         #             | 
-230 PRINT "  #  #   #  #             | 7 STORE
-240 PRINT "  #         #             | 
-250 PRINT "  #  #####  #             | 8 ITEMS
-260 PRINT "  #         #             |
-270 PRINT "   #########              | 9 CREDITS
+200 PRINT "   #       #              | 6 STORE
+210 PRINT "  # ####### #             |
+220 PRINT "  #         #             | 7 ITEMS
+230 PRINT "  #  #   #  #             | 
+240 PRINT "  #         #             | 8 CREDITS
+250 PRINT "  #  #####  #             | 
+260 PRINT "  #         #             | VER 0.53
+270 PRINT "   #########              | * BETA *
 280 PRINT "   #       #              |
 290 
 310 GET K$
@@ -34,12 +34,12 @@
 350 IF K$ = "2" AND MOOLAH > 9 AND BELLY < 98 THEN LOVE = LOVE+5 : MOOLAH = MOOLAH-10 : BELLY = BELLY+3 : GOTO 70
 360 IF K$ = "2" AND MOOLAH < 9 THEN GOTO 70
 370 IF K$ = "3" THEN LOVE = LOVE +2 : LUST = LUST+1 : GOTO 70
-380 IF K$ = "7" THEN GOTO 500
+380 IF K$ = "6" THEN GOTO 500
 390 IF K$ = "4" AND BELLY > 3 AND ENERGY > 50 THEN MOOLAH = MOOLAH+30 : ENERGY = ENERGY-30 : BELLY = BELLY-3 : GOTO 70
 400 IF K$ = "5" AND COOKIES == 0 THEN COOKIES = 50 : GOTO 70
 410 IF K$ = "5" AND COOKIES > 0 THEN GOTO 70
 420 IF K$ = "4" AND BELLY < 3 AND ENERGY < 50 THEN GOTO 70
-430 IF K$ = "7" 
+430 IF K$ = "7" THEN GOTO 1000
 
 500 HOME
 510 PRINT " -------------------------------------- "
@@ -71,16 +71,27 @@
 770 IF K$ = "5" AND COUCH0 == 1 THEN GOTO 500
 780 IF K$ = "0" THEN GOTO 70
 
-1000 PRINT " -------------------------------------- "
+1000 HOME : PRINT " -------------------------------------- "
 1010 PRINT "            Toshi's items               "
 1020 PRINT " -------------------------------------- "
 1030 IF LORDSB == 1 THEN PRINT " 1 LORS BED"
 1040 IF YRNBAL == 1 THEN PRINT " 2 MRANS YARN BALL"
 1050 IF COMPUT == 1 THEN PRINT " 3 COMPUTER AX229"
 1060 IF COUCH0 == 1 THEN PRINT " 4 DARSIN COUCH"
-1070 GET K$
-1080 IF K$ = "" THEN 1000
-1090 IF K$ = "1" THEN 2000
-1100 IF K$ = "2" THEN 20XX
-1110 IF K$ = "3" THEN 20XX
-1120 IF K$ = "4" THEN 20XX
+1070 IF DEBUG  == 1 THEN PRINT " 9 DEBUGGER"
+1080 PRINT " PRESS 0 TO LEAVE" 
+1090 GET K$
+1100 IF K$ = "" THEN 1000
+1110 IF K$ = "0" THEN 70
+1120 IF K$ = "9" THEN 1400
+
+1400 HOME : INPUT "How much love?";LOVE
+1410 INPUT "How much moolah? <3";MOOLAH
+1420 INPUT "How much lust? <<33";LUST
+1430 INPUT "How much belly?";BELLY
+1440 INPUT "How much energy?";ENERGY
+1450 INPUT "How much cookies?";BREADAM
+1460 PRINT "Configuration saved. Press 1 to continue."
+1470 GET K$
+1480 IF K$ = "" THEN 1470
+1490 IF K$ = "1" THEN 70
